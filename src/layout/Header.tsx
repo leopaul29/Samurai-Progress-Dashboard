@@ -1,17 +1,17 @@
-import {AppBar, AppBarSection, AppBarSpacer, Avatar} from '@progress/kendo-react-layout';
+import { AppBar, AppBarSection, AppBarSpacer, Avatar } from '@progress/kendo-react-layout';
 import { Button } from '@progress/kendo-react-buttons';
-import {menuIcon} from '@progress/kendo-svg-icons';
+import { menuIcon } from '@progress/kendo-svg-icons';
 import './Header.css';
-import {LanguageSwitch} from "../components/LanguageSwitch.tsx";
-import {useTranslation} from "react-i18next";
-import {Link} from "react-router";
+import { LanguageSwitch } from "../components/LanguageSwitch.tsx";
+import { useTranslation } from "react-i18next";
+import {NavLink} from "react-router";
 
 const kendokaAvatar = 'https://demos.telerik.com/kendo-react-ui/assets/suite/kendoka-react.png';
 
 export const Header = () => {
     const { t } = useTranslation();
 
-    return(
+    return (
         <AppBar themeColor="primary">
             <AppBarSection>
                 <Button type="button" fillMode="flat" svgIcon={menuIcon} />
@@ -26,11 +26,19 @@ export const Header = () => {
             <AppBarSpacer style={{ width: 32 }} />
 
             <AppBarSection>
-                <nav>
-                    <Link to="/">Dashboard</Link>
-                    <Link to="/missions">Missions</Link>
-                    <Link to="/shop">Shop</Link>
-                    <Link to="/stats">Stats</Link>
+                <nav className="nav-menu">
+                    <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+                        Dashboard
+                    </NavLink>
+                    <NavLink to="/missions" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+                        Missions
+                    </NavLink>
+                    <NavLink to="/shop" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+                        Shop
+                    </NavLink>
+                    <NavLink to="/stats" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
+                        Stats
+                    </NavLink>
                 </nav>
             </AppBarSection>
 
@@ -45,12 +53,12 @@ export const Header = () => {
             </AppBarSection>
 
             <AppBarSection>
-                <Link to="/profile">
+                <NavLink to="/profile">
                     <Avatar type="image">
                         <img src={kendokaAvatar} alt="KendoReact Layout Kendoka Avatar" />
                     </Avatar>
-                </Link>
+                </NavLink>
             </AppBarSection>
         </AppBar>
-    )
-}
+    );
+};

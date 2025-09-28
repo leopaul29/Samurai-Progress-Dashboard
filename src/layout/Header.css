@@ -1,7 +1,64 @@
+/* Header.css */
+.nav-menu {
+    display: flex;
+    gap: 24px; /* Space between links */
+    align-items: center; /* Vertically align with AppBar content */
+}
+
+/* Base styles for navigation links */
+.nav-link {
+    color: #ffffff; /* White text to contrast with primary AppBar background */
+    text-decoration: none; /* Remove default underline */
+    font-size: 16px; /* Consistent with KendoReact typography */
+    padding: 8px 12px; /* Clickable area */
+    border-radius: 4px; /* Subtle rounding */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Smooth hover effect */
+}
+
+/* Hover effect */
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle white overlay */
+    color: #ffffff;
+}
+
+/* Active link styling */
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly stronger background for active link */
+    font-weight: bold; /* Emphasize active link */
+}
+
+/* Ensure title aligns with links */
 .title {
-    font-size: 18px;
+    font-size: 20px;
+    color: #ffffff;
     margin: 0;
 }
-.k-badge-container {
-    margin-right: 8px;
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column; /* Stack links vertically on small screens */
+        gap: 12px;
+        padding: 8px 0;
+    }
+
+    .nav-link {
+        font-size: 14px; /* Slightly smaller text */
+        padding: 6px 10px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+}
+
+/* Ensure separator aligns with Kendo theme */
+.k-appbar-separator {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Improve avatar alignment */
+.k-avatar {
+    display: flex;
+    align-items: center;
 }
