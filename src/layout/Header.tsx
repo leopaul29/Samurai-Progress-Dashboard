@@ -4,6 +4,7 @@ import {menuIcon} from '@progress/kendo-svg-icons';
 import './Header.css';
 import {LanguageSwitch} from "../components/LanguageSwitch.tsx";
 import {useTranslation} from "react-i18next";
+import {Link} from "react-router";
 
 const kendokaAvatar = 'https://demos.telerik.com/kendo-react-ui/assets/suite/kendoka-react.png';
 
@@ -25,20 +26,12 @@ export const Header = () => {
             <AppBarSpacer style={{ width: 32 }} />
 
             <AppBarSection>
-                <ul>
-                    <li>
-                        <span>Dashboard</span>
-                    </li>
-                    <li>
-                        <span>Missions</span>
-                    </li>
-                    <li>
-                        <span>Shop</span>
-                    </li>
-                    <li>
-                        <span>Stats</span>
-                    </li>
-                </ul>
+                <nav>
+                    <Link to="/">Dashboard</Link>
+                    <Link to="/missions">Missions</Link>
+                    <Link to="/shop">Shop</Link>
+                    <Link to="/stats">Stats</Link>
+                </nav>
             </AppBarSection>
 
             <AppBarSpacer />
@@ -52,9 +45,11 @@ export const Header = () => {
             </AppBarSection>
 
             <AppBarSection>
-                <Avatar type="image">
-                    <img src={kendokaAvatar} alt="KendoReact Layout Kendoka Avatar" />
-                </Avatar>
+                <Link to="/profile">
+                    <Avatar type="image">
+                        <img src={kendokaAvatar} alt="KendoReact Layout Kendoka Avatar" />
+                    </Avatar>
+                </Link>
             </AppBarSection>
         </AppBar>
     )
