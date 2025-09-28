@@ -1,4 +1,10 @@
 {
+  "title": "サムライ進捗ダッシュボード",
+  "welcome": "いらっしゃいませ",
+  "language": "言語",
+  "english": "英語",
+  "japanese": "日本語",
+  "french": "フランス語",
   "missions": "任務",
   "shop": "商店",
   "stats": "統計",

@@ -1,4 +1,10 @@
 {
+  "title": "Samurai Progress Dashboard",
+  "welcome": "Welcome",
+  "language": "Language",
+  "english": "English",
+  "japanese": "Japanese",
+  "french": "French",
   "missions": "Missions",
   "shop": "Shop",
   "stats": "Statistics",
