@@ -17,10 +17,6 @@ export const Dashboard = () => {
     return(
         <>
             <div>
-                <h1>Samurai Progress Dashboard</h1>
-                <div>Lang: GB/JP</div>
-            </div>
-            <div>
                 <div>XP: progressbard (level 5)</div>
                 <div>Gold: 1200</div>
             </div>
