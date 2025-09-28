@@ -12,5 +12,9 @@
   "gold": "Gold",
   "xp": "Experience",
   "complete": "Complete",
-  "buy": "Buy"
+  "buy": "Buy",
+  "deadline": "Deadline",
+  "mission": {
+    "name": "Missions's name"
+  }
 }

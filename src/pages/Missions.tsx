@@ -9,40 +9,36 @@
  * [+ Add Mission] (opens Dialog)
  * @constructor
  */
-import { Grid, GridColumn as Column } from '@progress/kendo-react-grid';
+import {MissionList} from "../components/MissionList.tsx";
+import type {Mission} from "../types/types.tsx";
 import {useState} from "react";
-
-interface Mission {
-    id: number,
-    title: string,
-    deadline: string,
-    reward: string,
-    status: string,
-    action: string,
-}
-
-const missions: Mission[] = [
-    {id: 1, title:"寺を訪問する",deadline: "2025-10-02", reward: "💰 200", status: "Ongoing", action: "完了/Done"},
-    {id: 2, title:"読書する"    ,deadline: "2025-10-05"  , reward: "💰 100", status: "Pending", action: "完了/Done"},
-    {id: 3, title:"コード書く"  ,deadline: "2025-10-10"   ,  reward: "💰 300", status: "Ongoing", action: "完了/Done"},
-]
+import {missions} from "../assets/missions.ts";
 
 export const Missions = () => {
     const [data, setData] = useState<Array<Mission>>(missions);
 
-    const grid = (
-        <Grid data={data}>
-            <Column field="id" title="ID" />
-            <Column field="title" title="Title"/>
-            <Column field="deadline" title="Deadline"/>
-            <Column field="reward" title="Reward"/>
-            <Column field="status" title="Status"/>
-            <Column field="action" title="Action"/>
-        </Grid>);
+    const handleAddMission = ()=> {
+        const newMission: Mission = {
+            id: Date.now(),
+            title: "New Mission",
+            deadline: new Date().toISOString().split('T')[0],
+            reward: 25,
+            status: false
+        };
+        setData(prev => [...prev, newMission]);    }
+
+    const handleUpdateMission = (updatedMissions: Mission[]) => {
+        setData(updatedMissions);
+        console.log("Missions updated:", updatedMissions);
+    };
+
     return(
         <>
-            {grid}
-            <button>+ Add Mission</button>
+            <MissionList
+                missions={data}
+                handleAddMission={handleAddMission}
+                handleUpdateMission={handleUpdateMission}
+            />
         </>
     )
 }

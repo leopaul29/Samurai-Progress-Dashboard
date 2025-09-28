@@ -12,5 +12,9 @@
   "gold": "金",
   "xp": "経験",
   "complete": "完了",
-  "buy": "購入"
+  "buy": "購入",
+  "deadline": "期限",
+  "mission": {
+    "name": "ミッション名"
+  }
 }
