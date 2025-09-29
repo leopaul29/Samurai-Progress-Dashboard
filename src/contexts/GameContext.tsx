@@ -1,6 +1,6 @@
 import {createContext, useState, useContext, type ReactNode} from "react";
 import type {Badge, Item, Mission} from "../types/types.tsx";
-import {badgeList} from "../assets/badges.tsx";
+import {badgeList} from "../assets/badges.ts";
 
 interface GameContextProviderProps {
     children: ReactNode;
