@@ -8,6 +8,7 @@ import {badgeData, COLORS, goldData, xpData} from "../assets/stats.ts";
 export const Stats = () => {
     const { t } = useTranslation();
 
+    // @ts-ignore
     return (
         <div style={{ padding: "2rem" }}>
             <h1 style={{ marginBottom: "1rem" }}>{t("stats.menuName")}</h1>
@@ -56,7 +57,7 @@ export const Stats = () => {
                             dataKey="value"
                             nameKey="name"
                         >
-                            {badgeData.map((entry, index) => (
+                            {badgeData.map((_entry, index) => (
                                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                             ))}
                         </Pie>

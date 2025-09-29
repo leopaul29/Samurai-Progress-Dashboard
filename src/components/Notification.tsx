@@ -1,5 +1,5 @@
-import { createContext, useContext, useState, ReactNode } from "react";
-import { Notification, NotificationGroup } from "@progress/kendo-react-notification";
+import { createContext, useContext, useState, type ReactNode } from "react";
+import { Notification as KendoNotification, NotificationGroup } from "@progress/kendo-react-notification";
 
 interface Notification {
   id: number;
@@ -27,9 +27,9 @@ export const NotificationProvider = ({ children }: { children: ReactNode }) => {
     <NotificationContext.Provider value={{ addNotification }}>
       <NotificationGroup style={{ right: 10, top: 10, position: "fixed" }}>
         {notifications.map((n) => (
-          <Notification key={n.id} type={{ style: "success", icon: true }}>
+          <KendoNotification key={n.id} type={{ style: "success", icon: true }}>
             <span>{n.message}</span>
-          </Notification>
+          </KendoNotification>
         ))}
       </NotificationGroup>
       {children}
