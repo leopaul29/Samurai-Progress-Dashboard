@@ -1,5 +1,14 @@
 import type {Mission} from "../types/types.tsx";
 
+export const newMission: Mission = {
+  id: Date.now(),
+  title: "New Mission",
+  title_Jp: "新しいミッション",
+  deadline: new Date().toISOString().split('T')[0],
+  reward: 25,
+  status: false
+};
+
 export const MISSIONS: Mission[] = [
   {
     id: 1,

@@ -40,8 +40,8 @@ export const MissionList = ({ missions, handleAddMission, handleUpdateMission  }
 
     return (
         <div>
-            <h2>{t("missions")}</h2>
-            <p>Gold: 💰 {gold}</p>
+            <h2>{t("mission.menuName")}</h2>
+            <p>{t("gold")}: 💰 {gold}</p>
             <Grid
                 data={missions}
                 edit={edit}
