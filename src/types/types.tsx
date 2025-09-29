@@ -10,8 +10,10 @@ export interface Mission {
 export interface Item {
     id: number,
     name: string,
+    nameJp: string,
     description: string,
     cost: number,
+    xp: number
 }
 
 export interface Badge {
