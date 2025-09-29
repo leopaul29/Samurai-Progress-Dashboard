@@ -1,0 +1,402 @@
+:root {
+  /* Primary Colors */
+  --kendo-color-primary: #dc143c;
+  --kendo-color-primary-lighter: #ff4757;
+  --kendo-color-primary-darker: #b8002b;
+
+  /* Background Colors */
+  --kendo-body-bg: #0f0f0f;
+  --kendo-component-bg: #1a1a1a;
+  --kendo-base-bg: #1a1a1a;
+
+  /* Text Colors - Improved contrast */
+  --kendo-body-text: #ffffff;
+  --kendo-component-text: #ffffff;
+
+  /* Border Colors */
+  --kendo-component-border: #dc143c;
+  --kendo-base-border: #333333;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  color: #ffffff;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Custom card styling */
+.k-card {
+  background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+  border: 1px solid #dc143c;
+  box-shadow: 0 4px 12px rgba(220, 20, 60, 0.3);
+}
+
+.k-card:hover {
+  box-shadow: 0 6px 16px rgba(220, 20, 60, 0.4);
+  border-color: #ff4757;
+}
+
+.k-card-header {
+  background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+  color: #ffffff !important;
+  border-bottom: 2px solid #ff4757;
+  font-weight: 600;
+}
+
+.k-card-body {
+  color: #ffffff;
+}
+
+.k-card-title {
+  color: #ffffff !important;
+}
+
+/* Grid styling */
+.k-grid {
+  background-color: #1a1a1a;
+  border-color: #333333;
+  /*color: #ffffff;*/
+}
+
+.k-grid-header {
+  background: linear-gradient(180deg, #2d2d2d 0%, #1a1a1a 100%);
+  border-color: #dc143c;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.k-grid-header th {
+  border-color: #333333;
+  /*color: #ffffff !important;*/
+}
+
+.k-grid tbody tr {
+  background-color: #1a1a1a;
+  border-color: #2d2d2d;
+}
+
+/*.k-grid tbody tr:hover {*/
+/*  background-color: #2d2d2d;*/
+/*  box-shadow: inset 0 0 0 1px rgba(220, 20, 60, 0.3);*/
+/*}*/
+
+/*.k-grid tbody tr.k-selected,*/
+/*.k-grid tbody tr.k-state-selected {*/
+/*  background: linear-gradient(90deg, rgba(220, 20, 60, 0.3) 0%, rgba(220, 20, 60, 0.2) 100%);*/
+/*  color: #ffffff;*/
+/*  border-left: 3px solid #dc143c;*/
+/*}*/
+
+.k-grid td {
+  border-color: #2d2d2d;
+  color: #ffffff !important;
+}
+
+/* Button styling */
+.k-button {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  color: #ffffff;
+}
+
+.k-button-solid-primary {
+  background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+  border-color: #dc143c;
+  /*color: #ffffff !important;*/
+}
+
+.k-button-solid-primary:hover {
+  background: linear-gradient(135deg, #ff4757 0%, #dc143c 100%);
+  border-color: #ff4757;
+  box-shadow: 0 4px 12px rgba(220, 20, 60, 0.5);
+  transform: translateY(-2px);
+}
+
+.k-button-solid-primary:active {
+  transform: translateY(0);
+}
+
+/* TabStrip styling - IMPROVED CONTRAST */
+.k-tabstrip {
+  background-color: transparent;
+  border-color: #333333;
+}
+
+.k-tabstrip-items-wrapper {
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #dc143c;
+}
+
+.k-tabstrip-items {
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #dc143c;
+}
+
+.k-tabstrip .k-item {
+  background-color: #2d2d2d;
+  border-color: #333333;
+  color: #cccccc !important; /* Lighter gray for better visibility */
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/*.k-tabstrip .k-item:hover {*/
+/*  background-color: #3d3d3d;*/
+/*  color: #ffffff !important; !* White on hover *!*/
+/*}*/
+
+/*.k-tabstrip .k-item.k-selected,*/
+/*.k-tabstrip .k-item.k-active {*/
+/*  background: linear-gradient(180deg, #dc143c 0%, #8b0000 100%);*/
+/*  !*color: #ffffff !important; !* White when selected *!*!*/
+/*  border-bottom-color: transparent;*/
+/*  box-shadow: 0 -2px 8px rgba(220, 20, 60, 0.3);*/
+/*}*/
+
+.k-tabstrip .k-content {
+  background-color: #1a1a1a;
+  border-color: #333333;
+  /*color: #ffffff !important;*/
+}
+
+/* Make sure tab link text is visible */
+.k-tabstrip .k-link {
+  color: inherit !important;
+}
+
+/* Progress bar styling */
+.k-progressbar {
+  background-color: #2d2d2d;
+  border-color: #333333;
+}
+
+.k-progressbar .k-progress-status-wrap {
+  /*background: linear-gradient(90deg, #8b0000 0%, #dc143c 50%, #ff4757 100%);*/
+  /*box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);*/
+}
+
+.k-progressbar .k-progress-status {
+  color: #ffffff !important;
+}
+
+/* Chip styling */
+.k-chip {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+  border: 1px solid #dc143c;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.k-chip:hover {
+  background: linear-gradient(135deg, #3d3d3d 0%, #2d2d2d 100%);
+  border-color: #ff4757;
+  box-shadow: 0 2px 8px rgba(220, 20, 60, 0.3);
+}
+
+.k-chip.k-chip-solid-primary {
+  background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+  border-color: #dc143c;
+  color: #ffffff !important;
+}
+
+/* Switch styling */
+.k-switch .k-switch-track {
+  background-color: #2d2d2d;
+  border-color: #333333;
+}
+
+.k-switch.k-switch-on .k-switch-track {
+  background: linear-gradient(90deg, #8b0000 0%, #dc143c 100%);
+  border-color: #dc143c;
+}
+
+.k-switch .k-switch-thumb {
+  background-color: #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.k-switch.k-switch-on .k-switch-thumb {
+  background-color: #ffffff;
+}
+
+/* Input styling */
+.k-input,
+.k-textbox,
+.k-textarea {
+  background-color: #2d2d2d;
+  border-color: #333333;
+  color: #ffffff !important;
+}
+
+.k-input:hover,
+.k-textbox:hover,
+.k-textarea:hover {
+  border-color: #dc143c;
+}
+
+.k-input:focus,
+.k-textbox:focus,
+.k-textarea:focus {
+  border-color: #ff4757;
+  box-shadow: 0 0 0 2px rgba(220, 20, 60, 0.2);
+  color: #ffffff !important;
+}
+
+.k-input::placeholder,
+.k-textbox::placeholder,
+.k-textarea::placeholder {
+  color: #999999;
+}
+
+/* Dropdown styling */
+.k-dropdown,
+.k-dropdownlist {
+  background-color: #2d2d2d;
+  border-color: #333333;
+  color: #ffffff !important;
+}
+
+.k-dropdown:hover,
+.k-dropdownlist:hover {
+  border-color: #dc143c;
+}
+
+.k-dropdown .k-input-inner,
+.k-dropdownlist .k-input-inner {
+  color: #ffffff !important;
+}
+
+.k-list {
+  background-color: #1a1a1a;
+  border-color: #333333;
+}
+
+.k-list .k-list-item {
+  color: #ffffff !important;
+}
+
+.k-list .k-list-item:hover,
+.k-list .k-list-item.k-hover {
+  background-color: #2d2d2d;
+  color: #ffffff !important;
+}
+
+.k-list .k-list-item.k-selected,
+.k-list .k-list-item.k-state-selected {
+  background: linear-gradient(90deg, #dc143c 0%, #8b0000 100%);
+  color: #ffffff !important;
+}
+
+/* Notification styling */
+.k-notification {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 1px solid #dc143c;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(220, 20, 60, 0.4);
+}
+
+.k-notification.k-notification-success {
+  border-color: #4caf50;
+}
+
+.k-notification.k-notification-success .k-notification-status {
+  color: #4caf50;
+}
+
+.k-notification.k-notification-error {
+  border-color: #ff1744;
+}
+
+.k-notification.k-notification-error .k-notification-status {
+  color: #ff1744;
+}
+
+/* Scrollbar styling (for webkit browsers) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border: 1px solid #333333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #dc143c 0%, #8b0000 100%);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff4757 0%, #dc143c 100%);
+}
+
+/* Headings - Japanese/Samurai decorative elements */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(220, 20, 60, 0.3);
+  position: relative;
+  padding-bottom: 8px;
+}
+
+h1::after, h2::after, h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, #dc143c 0%, transparent 100%);
+}
+
+/* Labels and general text */
+label {
+  color: #ffffff;
+}
+
+p {
+  color: #ffffff;
+}
+
+div {
+  color: #ffffff;
+}
+
+span {
+  color: inherit;
+}
+
+/* Toolbar styling */
+.k-toolbar {
+  background-color: #1a1a1a;
+  border-color: #333333;
+  color: #ffffff;
+}
+
+/* Dialog/Modal styling */
+.k-dialog,
+.k-window {
+  background-color: #1a1a1a;
+  border: 2px solid #dc143c;
+  color: #ffffff;
+}
+
+.k-dialog-titlebar,
+.k-window-titlebar {
+  background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+  color: #ffffff !important;
+  border-bottom: 2px solid #ff4757;
+}
+
+/* Ensure all text elements have proper contrast */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #dc143c #1a1a1a;
+}
+
+/* Fix for any remaining low contrast text */
+.k-tabstrip-content > * {
+  color: #ffffff;
+}
