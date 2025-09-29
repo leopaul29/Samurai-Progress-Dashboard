@@ -29,7 +29,6 @@ export const Missions = () => {
 
     const handleUpdateMission = (updatedMissions: Mission[]) => {
         setData(updatedMissions);
-        console.log("Missions updated:", updatedMissions);
     };
 
     return(

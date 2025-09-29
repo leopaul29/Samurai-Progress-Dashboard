@@ -15,10 +15,15 @@ const xpData = [
 ];
 
 export const DashboardContent = () => {
-    const { level, xp, gold, badges, items } = useGame();
+    const { level, xp, gold, badges, items, completedMissions } = useGame();
     const recentPurchasesSorted:Item[] = items.reverse().slice(0, 3);
     const recentPurchasesDisplay = recentPurchasesSorted.map((item, index) => (
         <li key={index}>{item.name} (+{item.cost} Gold)</li>
+    ))
+
+    const recentMissionsSorted = completedMissions.reverse().slice(0, 3);
+    const recentMissionsDisplay = recentMissionsSorted.map((mission, index) => (
+        <li key={index}>{mission.title} (+{mission.reward} Gold)</li>
     ))
 
     return (
@@ -54,11 +59,11 @@ export const DashboardContent = () => {
             <Card>
                 <CardHeader>Recent Missions</CardHeader>
                 <CardBody>
-                    <ul>
-                        <li>⚔️ Defeat the Oni — <em>Ongoing</em></li>
-                        <li>💰 Collect 100 Gold — <em>Done</em></li>
-                        <li>🧘 Train with Sensei — <em>Todo</em></li>
-                    </ul>
+                    { recentMissionsSorted && recentMissionsSorted.length > 0 ? (
+                        <ul>{recentMissionsDisplay}</ul>
+                    ) : (
+                        <p>No missions completed</p>
+                    )}
                 </CardBody>
             </Card>
 
