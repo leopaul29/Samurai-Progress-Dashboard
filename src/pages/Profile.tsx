@@ -21,6 +21,7 @@ export const Profile = () => {
             <div>Language: [ 🇬🇧 English ▼ ]</div>
             <div>Theme:    [ 日 (Day) | 夜 (Night) ]</div>
             <div>Badges: [🌸] [🏯] [🐉]</div>
+            <div>Badges: <div> [🌸 Sakura Slayer] [🏯 Castle Explorer]</div></div>
         </>
     )
 }

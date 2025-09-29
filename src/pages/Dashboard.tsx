@@ -17,8 +17,6 @@ import {DashboardContent} from "../components/DashboardContent.tsx";
 export const Dashboard = () => {
     return(
         <>
-            <div>Badges: <div> [🌸 Sakura Slayer] [🏯 Castle Explorer]</div></div>
-
             <DashboardContent/>
         </>
     )}
