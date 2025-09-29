@@ -1,22 +1,30 @@
-import { createContext, useState, useContext } from "react";
+import {createContext, useState, useContext, type ReactNode} from "react";
+import type {Item} from "../types/types.tsx";
+
+interface GameContextProviderProps {
+    children: ReactNode;
+}
 
 interface GameState {
     level: number;
     xp: number;
     gold: number;
     badges: string[];
+    items: Item[];
     addXp: (amount: number) => void;
     addGold: (amount: number) => void;
     addBadge: (badge: string) => void;
+    addItem: (item: Item) => void;
 }
 
-export const GameContext = createContext<GameState | undefined>(undefined);
+const GameContext = createContext<GameState | undefined>(undefined);
 
-export const GameProvider = ({ children }) => {
+export const GameProvider = ({ children }: GameContextProviderProps) => {
     const [level, setLevel] = useState(1);
     const [xp, setXp] = useState(0);
     const [gold, setGold] = useState(500);
     const [badges, setBadges] = useState<string[]>([]);
+    const [items, setItems] = useState<Item[]>([]);
 
     const addXp = (amount: number) => {
         setXp(prev => {
@@ -31,9 +39,10 @@ export const GameProvider = ({ children }) => {
 
     const addGold = (amount: number) => setGold(prev => prev + amount);
     const addBadge = (badge: string) => setBadges(prev => [...prev, badge]);
+    const addItem = (item: Item) => setItems(prev => [...prev, item]);
 
     return (
-        <GameContext.Provider value={{ level, xp, gold, badges, addXp, addGold, addBadge }}>
+        <GameContext.Provider value={{ level, xp, gold, badges, items, addXp, addGold, addBadge, addItem }}>
             {children}
         </GameContext.Provider>
     );
