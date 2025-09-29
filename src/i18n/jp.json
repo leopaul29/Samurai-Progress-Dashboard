@@ -14,8 +14,7 @@
     "tab": {
       "name": "アイテム名",
       "description": "説明",
-      "cost":"費用",
-      "experience": "経験"
+      "cost":"費用"
     },
     "obj": {
       "name": "nameJp"
@@ -39,7 +38,8 @@
     "tab": {
       "name": "ミッション名",
       "deadline": "期限",
-      "complete": "完了"
+      "complete": "完了",
+      "experience": "経験"
     },
     "obj": {
       "title": "title_Jp"

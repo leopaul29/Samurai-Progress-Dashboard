@@ -14,8 +14,7 @@
     "tab": {
       "name": "Item's name",
       "description": "Description",
-      "cost":"Cost",
-      "experience": "Experience"
+      "cost":"Cost"
     },
     "obj": {
       "name": "name"
@@ -39,7 +38,8 @@
     "tab": {
       "name": "Missions's name",
       "deadline": "Deadline",
-      "complete": "Complete"
+      "complete": "Complete",
+      "experience": "Experience"
     },
     "obj": {
       "title": "title"
