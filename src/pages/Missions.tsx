@@ -12,15 +12,16 @@
 import {MissionList} from "../components/MissionList.tsx";
 import type {Mission} from "../types/types.tsx";
 import {useState} from "react";
-import {missions} from "../assets/missions.ts";
+import {MISSIONS} from "../assets/missions.ts";
 
 export const Missions = () => {
-    const [data, setData] = useState<Array<Mission>>(missions);
+    const [data, setData] = useState<Array<Mission>>(MISSIONS);
 
     const handleAddMission = ()=> {
         const newMission: Mission = {
             id: Date.now(),
             title: "New Mission",
+            title_Jp: "newmission",
             deadline: new Date().toISOString().split('T')[0],
             reward: 25,
             status: false

@@ -24,8 +24,13 @@
   },
   "mission": {
     "menuName": "Missions",
-    "name": "Missions's name",
-    "deadline": "Deadline",
-    "complete": "Complete"
+    "tab": {
+      "name": "Missions's name",
+      "deadline": "Deadline",
+      "complete": "Complete"
+    },
+    "obj": {
+      "title": "title"
+    }
   }
 }

@@ -24,8 +24,13 @@
   },
   "mission": {
     "menuName": "任務",
-    "name": "ミッション名",
-    "deadline": "期限",
-    "complete": "完了"
+    "tab": {
+      "name": "ミッション名",
+      "deadline": "期限",
+      "complete": "完了"
+    },
+    "obj": {
+      "title": "title_Jp"
+    }
   }
 }

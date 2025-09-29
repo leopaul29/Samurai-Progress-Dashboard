@@ -1,6 +1,7 @@
 export interface Mission {
     id: number,
     title: string,
+    title_Jp: string,
     deadline: string,
     reward: number,
     status: boolean, // false = ongoing, true = done
