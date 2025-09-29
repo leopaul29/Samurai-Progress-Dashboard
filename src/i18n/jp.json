@@ -10,10 +10,22 @@
   },
   "shop": {
     "menuName": "商店",
-    "buy": "購入"
+    "buy": "購入",
+    "tab": {
+      "name": "アイテム名",
+      "description": "説明",
+      "cost":"費用",
+      "experience": "経験"
+    },
+    "obj": {
+      "name": "nameJp"
+    }
   },
   "stats":  {
-    "menuName": "統計"
+    "menuName": "統計",
+    "xp_prog":"XPの進行",
+    "gold_over_time":"時間の経過とともに獲得したゴールド",
+    "badge_distribute":"バッジの配布"
   },
   "profile" : {
     "menuName": "プロフィール",

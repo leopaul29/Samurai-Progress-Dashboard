@@ -10,10 +10,22 @@
   },
   "shop": {
     "menuName":"Shop",
-    "buy": "Buy"
+    "buy": "Buy",
+    "tab": {
+      "name": "Item's name",
+      "description": "Description",
+      "cost":"Cost",
+      "experience": "Experience"
+    },
+    "obj": {
+      "name": "name"
+    }
   },
   "stats": {
-    "menuName": "Statistics"
+    "menuName": "Statistics",
+    "xp_prog":"XP Progression",
+    "gold_over_time":"Gold Collected Over Time",
+    "badge_distribute":"Badge Distribution"
   },
   "profile" : {
     "menuName": "Profile",

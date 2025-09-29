@@ -3,12 +3,13 @@ import { Notification, NotificationGroup } from "@progress/kendo-react-notificat
 import {useState} from "react";
 import {useGame} from "../contexts/GameContext.tsx";
 import {Button} from "@progress/kendo-react-buttons";
-import {shopItems} from "../assets/shopitems.ts";
+import {ITEMS} from "../assets/shopitems.ts";
 import type {Item} from "../types/types.tsx";
+import {useTranslation} from "react-i18next";
 
 export const Shop = () => {
+    const { t } = useTranslation();
     const {gold, addXp, addGold, addItem} = useGame();
-    const [data, setData] = useState<Array<Item>>(shopItems);
     const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
     const [notifications, setNotifications] = useState<{ message: string; id: number }[]>([]);
@@ -30,9 +31,9 @@ export const Shop = () => {
         }
 
         addGold(-selectedItem.cost);
-        addXp(10);
+        addXp(selectedItem.xp);
         addItem(selectedItem);
-        addNotification(selectedItem.name + " purchased! +10 XP");
+        addNotification(selectedItem.name + " purchased! "+selectedItem.xp+" XP");
     };
 
     const handleRowClick = (e: any) => {
@@ -42,21 +43,22 @@ export const Shop = () => {
 
     const grid = (
         <Grid
-            data={data}
+            data={ITEMS}
             onRowClick={handleRowClick}
             style={{ cursor: 'pointer' }}
         >
-            <Column field="id" title="ID" width="80px" />
-            <Column field="name" title="Item" width="200px" />
-            <Column field="description" title="Description" />
-            <Column field="cost" title="Cost" width="120px" />
+            {/*<Column field="id" title="ID" width="80px" />*/}
+            <Column field={t("shop.obj.name")} title={t("shop.tab.name")} width="200px" />
+            <Column field="description" title={t("shop.tab.description")} />
+            <Column field="cost" title={t("shop.tab.cost")} width="120px" />
+            <Column field="xp" title={t("shop.tab.experience")} width="120px" />
         </Grid>
     );
 
     return(
         <>
-            <h2>Shop 🏪</h2>
-            <p>Gold: 💰 {gold}</p>
+            <h2>{t("shop.menuName")} 🏪</h2>
+            <p>{t("gold")}: 💰 {gold}</p>
             <p><em>Click on a row to select an item</em></p>
 
             {selectedItem && (
