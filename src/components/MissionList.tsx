@@ -14,7 +14,7 @@ import {useGame} from "../contexts/GameContext.tsx";
 
 export const MissionList = ({ missions, handleAddMission, handleUpdateMission  }:MissionListProps) => {
     const { t } = useTranslation();
-    const {addGold} = useGame();
+    const {gold, addGold} = useGame();
     const [edit, setEdit] = useState<EditDescriptor>({});
 
     const handleItemChange = (event: GridItemChangeEvent) => {
@@ -40,6 +40,7 @@ export const MissionList = ({ missions, handleAddMission, handleUpdateMission  }
     return (
         <div>
             <h2>{t("missions")}</h2>
+            <p>Gold: 💰 {gold}</p>
             <Grid
                 data={missions}
                 edit={edit}
