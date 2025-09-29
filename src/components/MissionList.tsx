@@ -59,7 +59,7 @@ export const MissionList = ({ missions, handleAddMission, handleUpdateMission  }
                 <GridColumn field={t("mission.obj.title")} title={t("mission.tab.name")} editable={false} />
                 <GridColumn field="deadline" title={t("mission.tab.deadline")} editable={false} />
                 <GridColumn field="reward" title={t("gold")} editable={false} />
-                <GridColumn field="xp" title={t("mission.tab.experience")} editor="boolean" />
+                <GridColumn field="xp" title={t("mission.tab.experience")} editable={false} />
                 <GridColumn field="status" title={t("mission.tab.complete")} editor="boolean" />
             </Grid>
         </div>

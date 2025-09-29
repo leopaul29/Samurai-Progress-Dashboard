@@ -26,15 +26,23 @@ export const DashboardContent = () => {
         <li key={index}>{mission.title} (+{mission.reward} Gold)</li>
     ))
 
+    // Calculate XP progress to the next level
+    const xpForNextLevel = level * 100;
+    const xpProgress = (xp % 100) / 10; // Percentage for current level
+
     return (
-        <div style={{ padding: "2rem", display: "grid", gap: "1.5rem", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))" }}>
+        <div style={{ padding: "2rem", display: "grid", gap: "1.5rem", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))" }}>
             {/* Quick Stats */}
             <Card>
                 <CardHeader>Player Stats</CardHeader>
                 <CardBody>
                     <p><strong>Level:</strong> {level}</p>
-                    <ProgressBar value={xp} labelVisible={false} />
-                    <p><strong>XP:</strong> {xp} / 100</p>
+                    <ProgressBar
+                        value={xpProgress}
+                        style={{ height: "20px" }}
+                        labelVisible={false}
+                    />
+                    <p><strong>XP:</strong>{xp % 100} / {xpForNextLevel} XP</p>
                     <p><strong>Gold:</strong> {gold}</p>
                     <p><strong>Badges:</strong> {badges.length}</p>
                 </CardBody>
