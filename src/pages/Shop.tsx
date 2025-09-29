@@ -1,26 +1,17 @@
 import {Grid, GridColumn as Column} from '@progress/kendo-react-grid';
-import { Notification, NotificationGroup } from "@progress/kendo-react-notification";
 import {useState} from "react";
 import {useGame} from "../contexts/GameContext.tsx";
 import {Button} from "@progress/kendo-react-buttons";
 import {ITEMS} from "../assets/shopitems.ts";
 import type {Item} from "../types/types.tsx";
 import {useTranslation} from "react-i18next";
+import {useNotification} from "../components/Notification.tsx";
 
 export const Shop = () => {
     const { t } = useTranslation();
     const {gold, addGold, addItem} = useGame();
     const [selectedItem, setSelectedItem] = useState<Item | null>(null);
-
-    const [notifications, setNotifications] = useState<{ message: string; id: number }[]>([]);
-
-    const addNotification = (msg: string) => {
-        const id = new Date().getTime();
-        setNotifications(prev => [...prev, { message: msg, id }]);
-        setTimeout(() => {
-            setNotifications(prev => prev.filter(n => n.id !== id));
-        }, 3000);
-    };
+    const { addNotification } = useNotification();
 
     const handleBuy = () => {
         if (!selectedItem) return;
@@ -86,14 +77,6 @@ export const Shop = () => {
             <div style={{ marginTop: "1rem" }}>
                 {grid}
             </div>
-
-            <NotificationGroup style={{ right: 10, top: 10, position: "fixed" }}>
-                {notifications.map(n => (
-                    <Notification key={n.id} type={{ style: "success", icon: true }}>
-                        <span>{n.message}</span>
-                    </Notification>
-                ))}
-            </NotificationGroup>
         </>
     );
 };

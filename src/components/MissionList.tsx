@@ -11,11 +11,13 @@ import type {EditDescriptor} from "@progress/kendo-react-data-tools";
 import type {Mission} from "../types/types.tsx";
 import {Button} from "@progress/kendo-react-buttons";
 import {useGame} from "../contexts/GameContext.tsx";
+import {useNotification} from "./Notification.tsx";
 
 export const MissionList = ({ missions, handleAddMission, handleUpdateMission  }:MissionListProps) => {
     const { t } = useTranslation();
     const {gold, addGold, addMission, addXp} = useGame();
     const [edit, setEdit] = useState<EditDescriptor>({});
+    const { addNotification } = useNotification();
 
     const handleItemChange = (event: GridItemChangeEvent) => {
         if (event.field === "status" && event.value === true) {
@@ -32,6 +34,7 @@ export const MissionList = ({ missions, handleAddMission, handleUpdateMission  }
 
             // Clear edit state
             setEdit({});
+            addNotification("Mission status updated!");
         }
     };
 
