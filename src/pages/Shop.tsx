@@ -9,7 +9,7 @@ import {useTranslation} from "react-i18next";
 
 export const Shop = () => {
     const { t } = useTranslation();
-    const {gold, addXp, addGold, addItem} = useGame();
+    const {gold, addGold, addItem} = useGame();
     const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
     const [notifications, setNotifications] = useState<{ message: string; id: number }[]>([]);
@@ -31,9 +31,8 @@ export const Shop = () => {
         }
 
         addGold(-selectedItem.cost);
-        addXp(selectedItem.xp);
         addItem(selectedItem);
-        addNotification(selectedItem.name + " purchased! "+selectedItem.xp+" XP");
+        addNotification(selectedItem.name + " purchased!");
     };
 
     const handleRowClick = (e: any) => {
@@ -51,7 +50,6 @@ export const Shop = () => {
             <Column field={t("shop.obj.name")} title={t("shop.tab.name")} width="200px" />
             <Column field="description" title={t("shop.tab.description")} />
             <Column field="cost" title={t("shop.tab.cost")} width="120px" />
-            <Column field="xp" title={t("shop.tab.experience")} width="120px" />
         </Grid>
     );
 
@@ -67,7 +65,6 @@ export const Shop = () => {
                     padding: "1rem",
                     border: "2px solid #007acc",
                     borderRadius: "8px",
-                    backgroundColor: "#f0f8ff"
                 }}>
                     <h3>Selected: {selectedItem.name}</h3>
                     <p>{selectedItem.description}</p>
