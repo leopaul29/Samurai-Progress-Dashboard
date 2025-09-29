@@ -25,7 +25,7 @@ export const Profile = () => {
                         </CardTitle>
                     </CardHeader>
                     <CardBody>
-                        <div style={{ padding: "16px" }}>
+                        <div style={{ paddingRight: "16px", paddingLeft: "16px", paddingBottom: "16px" }}>
                             <h2 style={{ fontSize: "24px", marginBottom: "16px", color: "#333" }}>
                                 {t("profile.name")}
                             </h2>
@@ -42,6 +42,7 @@ export const Profile = () => {
                                 <ProgressBar
                                     value={xpProgress}
                                     style={{ height: "20px" }}
+                                    labelVisible={false}
                                 />
                                 <div style={{ textAlign: "center", marginTop: "4px", fontSize: "12px", color: "#666" }}>
                                     {xp % 100} / {xpForNextLevel} XP
