@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
+import './main.css'
 
 import '@progress/kendo-theme-fluent/dist/all.css';
 import {GameProvider} from "./contexts/GameContext.tsx";
