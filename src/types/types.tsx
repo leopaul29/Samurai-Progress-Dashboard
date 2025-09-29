@@ -5,6 +5,7 @@ export interface Mission {
     deadline: string,
     reward: number,
     status: boolean, // false = ongoing, true = done
+    xp: number
 }
 
 export interface Item {
@@ -12,8 +13,7 @@ export interface Item {
     name: string,
     nameJp: string,
     description: string,
-    cost: number,
-    xp: number
+    cost: number
 }
 
 export interface Badge {

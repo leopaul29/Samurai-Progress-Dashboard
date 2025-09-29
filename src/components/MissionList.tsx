@@ -14,7 +14,7 @@ import {useGame} from "../contexts/GameContext.tsx";
 
 export const MissionList = ({ missions, handleAddMission, handleUpdateMission  }:MissionListProps) => {
     const { t } = useTranslation();
-    const {gold, addGold, addMission} = useGame();
+    const {gold, addGold, addMission, addXp} = useGame();
     const [edit, setEdit] = useState<EditDescriptor>({});
 
     const handleItemChange = (event: GridItemChangeEvent) => {
@@ -24,10 +24,11 @@ export const MissionList = ({ missions, handleAddMission, handleUpdateMission  }
             );
 
             addGold(event.dataItem.reward);
+            addMission(event.dataItem);
+            addXp(event.dataItem.xp);
 
             // Update the parent component's state
             handleUpdateMission(updated);
-            addMission(event.dataItem);
 
             // Clear edit state
             setEdit({});
@@ -58,6 +59,7 @@ export const MissionList = ({ missions, handleAddMission, handleUpdateMission  }
                 <GridColumn field={t("mission.obj.title")} title={t("mission.tab.name")} editable={false} />
                 <GridColumn field="deadline" title={t("mission.tab.deadline")} editable={false} />
                 <GridColumn field="reward" title={t("gold")} editable={false} />
+                <GridColumn field="xp" title={t("mission.tab.experience")} editor="boolean" />
                 <GridColumn field="status" title={t("mission.tab.complete")} editor="boolean" />
             </Grid>
         </div>

@@ -6,7 +6,8 @@ export const newMission: Mission = {
   title_Jp: "新しいミッション",
   deadline: new Date().toISOString().split('T')[0],
   reward: 25,
-  status: false
+  status: false,
+  xp: 10
 };
 
 export const MISSIONS: Mission[] = [
@@ -17,6 +18,7 @@ export const MISSIONS: Mission[] = [
     deadline: "2025-10-01",
     reward: 10,
     status: false,
+    xp: 10
   },
   {
     id: 2,
@@ -25,6 +27,7 @@ export const MISSIONS: Mission[] = [
     deadline: "2025-10-05",
     reward: 20,
     status: false,
+    xp: 30
   },
   {
     id: 3,
@@ -33,6 +36,7 @@ export const MISSIONS: Mission[] = [
     deadline: "2025-10-07",
     reward: 15,
     status: false,
+    xp: 10
   },
   {
     id: 4,
@@ -41,6 +45,7 @@ export const MISSIONS: Mission[] = [
     deadline: "2025-09-28",
     reward: 8,
     status: false,
+    xp: 25
   },
   {
     id: 5,
@@ -49,5 +54,6 @@ export const MISSIONS: Mission[] = [
     deadline: "2025-10-12",
     reward: 25,
     status: false,
+    xp: 100
   },
 ];
