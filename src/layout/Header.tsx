@@ -28,7 +28,7 @@ export const Header = () => {
             <AppBarSection>
                 <nav className="nav-menu">
                     <NavLink to="/" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-                        Dashboard
+                        {t("dashboard.menuName")}
                     </NavLink>
                     <NavLink to="/missions" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
                         Missions

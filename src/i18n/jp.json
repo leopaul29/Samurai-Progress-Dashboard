@@ -1,5 +1,5 @@
 {
-  "title": "サムライ進捗ダッシュボード",
+  "title": "サムライ進捗",
   "welcome": "いらっしゃいませ",
   "language": "言語",
   "english": "英語",
@@ -14,6 +14,9 @@
   "complete": "完了",
   "buy": "購入",
   "deadline": "期限",
+  "dashboard": {
+    "menuName": "ダッシュボード"
+  },
   "mission": {
     "name": "ミッション名"
   }
