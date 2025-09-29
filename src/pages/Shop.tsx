@@ -7,9 +7,8 @@ import {shopItems} from "../assets/shopitems.ts";
 import type {Item} from "../types/types.tsx";
 
 export const Shop = () => {
-    const {gold, addXp, addGold, addBadge} = useGame();
+    const {gold, addXp, addGold, addItem} = useGame();
     const [data, setData] = useState<Array<Item>>(shopItems);
-    const [items, setItems] = useState<Item[]>([]);
     const [selectedItem, setSelectedItem] = useState<Item | null>(null);
 
     const [notifications, setNotifications] = useState<{ message: string; id: number }[]>([]);
@@ -32,8 +31,7 @@ export const Shop = () => {
 
         addGold(-selectedItem.cost);
         addXp(10);
-        addBadge(selectedItem.name);
-        setItems(prev => [...prev, selectedItem]);
+        addItem(selectedItem);
         addNotification(selectedItem.name + " purchased! +10 XP");
     };
 
