@@ -1,27 +1,31 @@
 {
   "title": "サムライ進捗",
-  "welcome": "いらっしゃいませ",
-  "language": "言語",
-  "english": "英語",
-  "japanese": "日本語",
-  "french": "フランス語",
-  "missions": "任務",
-  "shop": "商店",
-  "stats": "統計",
-  "profile": "プロフィール",
   "gold": "金",
   "xp": "経験",
-  "complete": "完了",
-  "buy": "購入",
-  "deadline": "期限",
+  "language": {
+    "name": "言語",
+    "english": "英語",
+    "japanese": "日本語",
+    "french": "フランス語"
+  },
+  "shop": {
+    "menuName": "商店",
+    "buy": "購入"
+  },
+  "stats":  {
+    "menuName": "統計"
+  },
   "profile" : {
-    "menuName": "Profile",
+    "menuName": "プロフィール",
     "name": "織田 信長"
   },
   "dashboard": {
     "menuName": "ダッシュボード"
   },
   "mission": {
-    "name": "ミッション名"
+    "menuName": "任務",
+    "name": "ミッション名",
+    "deadline": "期限",
+    "complete": "完了"
   }
 }

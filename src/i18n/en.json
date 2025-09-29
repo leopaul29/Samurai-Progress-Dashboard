@@ -1,19 +1,20 @@
 {
   "title": "Samurai Progress",
-  "welcome": "Welcome",
-  "language": "Language",
-  "english": "English",
-  "japanese": "Japanese",
-  "french": "French",
-  "missions": "Missions",
-  "shop": "Shop",
-  "stats": "Statistics",
-  "profile": "Profile",
   "gold": "Gold",
   "xp": "Experience",
-  "complete": "Complete",
-  "buy": "Buy",
-  "deadline": "Deadline",
+  "language": {
+    "name" : "Language",
+    "english": "English",
+    "japanese": "Japanese",
+    "french": "French"
+  },
+  "shop": {
+    "menuName":"Shop",
+    "buy": "Buy"
+  },
+  "stats": {
+    "menuName": "Statistics"
+  },
   "profile" : {
     "menuName": "Profile",
     "name": "Oda Nobunaga"
@@ -22,6 +23,9 @@
     "menuName": "Dashboard"
   },
   "mission": {
-    "name": "Missions's name"
+    "menuName": "Missions",
+    "name": "Missions's name",
+    "deadline": "Deadline",
+    "complete": "Complete"
   }
 }

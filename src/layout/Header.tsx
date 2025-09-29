@@ -31,13 +31,13 @@ export const Header = () => {
                         {t("dashboard.menuName")}
                     </NavLink>
                     <NavLink to="/missions" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-                        Missions
+                        {t("mission.menuName")}
                     </NavLink>
                     <NavLink to="/shop" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-                        Shop
+                        {t("shop.menuName")}
                     </NavLink>
                     <NavLink to="/stats" className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}>
-                        Stats
+                        {t("stats.menuName")}
                     </NavLink>
                 </nav>
             </AppBarSection>
