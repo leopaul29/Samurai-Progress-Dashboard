@@ -3,19 +3,8 @@ import { Notification, NotificationGroup } from "@progress/kendo-react-notificat
 import {useState} from "react";
 import {useGame} from "../contexts/GameContext.tsx";
 import {Button} from "@progress/kendo-react-buttons";
-
-interface Item {
-    id: number,
-    name: string,
-    description: string,
-    cost: number,
-}
-
-const shopItems: Item[] = [
-    {id: 1, name: "Katana 🗡️", description: "Increase XP gain" ,cost: 500 },
-    {id: 2, name: "Yukata 👘️", description: "Style bonus" ,cost:300 },
-    {id: 3, name: "Sakura Charm 🌸", description: "+Luck" ,cost:200 }
-]
+import {shopItems} from "../assets/shopitems.ts";
+import type {Item} from "../types/types.tsx";
 
 export const Shop = () => {
     const {gold, addXp, addGold, addBadge} = useGame();
