@@ -12,3 +12,10 @@ export interface Item {
     description: string,
     cost: number,
 }
+
+export interface Badge {
+    id: number,
+    text: string,
+    value: string,
+    disabled: boolean;
+}
