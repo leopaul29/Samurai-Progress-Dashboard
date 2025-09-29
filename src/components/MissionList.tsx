@@ -10,16 +10,20 @@ import {useState} from "react";
 import type {EditDescriptor} from "@progress/kendo-react-data-tools";
 import type {Mission} from "../types/types.tsx";
 import {Button} from "@progress/kendo-react-buttons";
+import {useGame} from "../contexts/GameContext.tsx";
 
 export const MissionList = ({ missions, handleAddMission, handleUpdateMission  }:MissionListProps) => {
     const { t } = useTranslation();
+    const {addGold} = useGame();
     const [edit, setEdit] = useState<EditDescriptor>({});
 
     const handleItemChange = (event: GridItemChangeEvent) => {
-        if (event.field) {
-                const updated = missions.map((item) =>
-                        item.id === event.dataItem.id ? { ...item, [event.field!]: event.value } : item
-                );
+        if (event.field === "status" && event.value === true) {
+            const updated = missions.map((item) =>
+                item.id === event.dataItem.id ? { ...item, [event.field!]: event.value } : item
+            );
+
+            addGold(event.dataItem.reward);
 
             // Update the parent component's state
             handleUpdateMission(updated);
